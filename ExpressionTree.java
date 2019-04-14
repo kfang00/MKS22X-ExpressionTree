@@ -36,7 +36,7 @@ public class ExpressionTree{
 
   public String toStringPrefix(){
     /*you are to write this method*/
-        if (isValue()) {
+    if (isValue()) {
       return getValue() + "";
     }
     return getOp() + " " + getLeft().toString() + " " + getRight().toString();
@@ -48,15 +48,17 @@ public class ExpressionTree{
 
   public double evaluate(){
     /*you are to write this method*/
-    return 0.0;
-
+    if (isOp()) {
+      return apply(getOp(), getLeft().evaluate(), getRight().evaluate());
     }
+    return getValue();
+  }
 
 
   /*use the correct operator on both a and b, and return that value*/
   private double apply(char op, double a, double b){
     /*you are to write this method*/
-    return 0.0;
+    return a op b;
 
     }
 
