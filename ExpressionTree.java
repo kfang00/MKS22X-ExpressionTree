@@ -15,14 +15,20 @@ public class ExpressionTree{
   /* The sample tree would be: "(3 + (2 * 10))"     */
   public String toString(){
     /*you are to write this method*/
-    return "";
+    if (isValue()) {
+      return getValue() + "";
+    }
+    return getLeft().toString() + " " + getOp() + " " + getRight().toString();
   }
 
   /*return the expression as a postfix notation string without parenthesis*/
   /* The sample tree would be: "3 2 10 * +"     */
   public String toStringPostfix(){
     /*you are to write this method*/
-    return "";
+    if (isValue()) {
+      return getValue() + "";
+    }
+    return getLeft().toString() + " " + getRight().toString() + " " +  getOp();
   }
 
   /*return the expression as a prefix notation string without parenthesis*/
@@ -30,7 +36,10 @@ public class ExpressionTree{
 
   public String toStringPrefix(){
     /*you are to write this method*/
-    return "";
+        if (isValue()) {
+      return getValue() + "";
+    }
+    return getOp() + " " + getLeft().toString() + " " + getRight().toString();
   }
 
 
