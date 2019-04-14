@@ -58,7 +58,19 @@ public class ExpressionTree{
   /*use the correct operator on both a and b, and return that value*/
   private double apply(char op, double a, double b){
     /*you are to write this method*/
-    return a op b;
+    if (op == '+') {
+      return a + b;
+    }
+    else if (op == '/') {
+      return a / b;
+    }
+    else if (op == '-') {
+      return a - b;
+    }
+    else if (op == '*') {
+      return a * b;
+    }
+    return a % b;
 
     }
 
